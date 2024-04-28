@@ -1,0 +1,30 @@
+@startuml
+
+class Chaleco {
+-propietario: Persona
+-nombreColor: String
+-abierto: boolean
+-bolsilloInteriorIzquierdo: Bolsillo
+-bolsilloExteriorIzquierdo: Bolsillo
+-bolsilloInteriorDerecho: Bolsillo
+-bolsilloExteriorDerecho: Bolsillo
++abrirChaleco()
++cerrarchaleco()
++abrirBolsillo(Bolsillo)
++guardarEnBolsillo(Bolsillo, Objeto): void
++sacarDeBolsillo(Bolsillo): Objeto
+}
+
+class Bolsillo {
+-lleno: boolean
+-objeto: Objeto
++abrirBolsillo()
++guardar(Objeto): void
++sacar(): Objeto
+}
+
+Chaleco --> Bolsillo: bolsilloInteriorIzquierdo
+Chaleco --> Bolsillo: bolsilloExteriorIzquierdo
+Chaleco --> Bolsillo: bolsilloInteriorDerecho
+Chaleco --> Bolsillo: bolsilloInteriorDerecho
+@enduml
