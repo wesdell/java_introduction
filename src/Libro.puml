@@ -1,0 +1,14 @@
+@startuml
+class Libro {
+-titulo: String
+-autor: String
+-editorial: String
+-contenido: Pagina
+-precio: double
+-categoria: String
++abrir(): void
++cerrar():
++pasarPagina(): Pagina
++regresarPagina(): Pagina
+}
+@enduml
