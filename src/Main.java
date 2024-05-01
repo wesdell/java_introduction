@@ -34,5 +34,6 @@ public class Main {
     System.out.println(chaleco.toString());
     chaleco.cerrar();
     System.out.println(chaleco.toString());
+    chaleco.guardar(1, "objeto");
   }
 }
