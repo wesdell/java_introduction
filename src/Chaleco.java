@@ -3,6 +3,7 @@ public class Chaleco {
 
   public void abrir() {
     abierto = true;
+    System.out.println("Test");
   }
 
   public void cerrar() {
