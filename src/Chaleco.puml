@@ -4,12 +4,12 @@ class Chaleco {
 -propietario: Persona
 -nombreColor: String
 -abierto: boolean
--bolsilloInteriorIzquierdo: Bolsillo
--bolsilloExteriorIzquierdo: Bolsillo
--bolsilloInteriorDerecho: Bolsillo
--bolsilloExteriorDerecho: Bolsillo
+'-bolsilloInteriorIzquierdo: Bolsillo
+'-bolsilloExteriorIzquierdo: Bolsillo
+'-bolsilloInteriorDerecho: Bolsillo
+'-bolsilloExteriorDerecho: Bolsillo
 +abrirChaleco()
-+cerrarchaleco()
++cerrarChaleco()
 +abrirBolsillo(Bolsillo)
 +guardarEnBolsillo(Bolsillo, Objeto): void
 +sacarDeBolsillo(Bolsillo): Objeto
@@ -23,8 +23,17 @@ class Bolsillo {
 +sacar(): Objeto
 }
 
-Chaleco --> Bolsillo: bolsilloInteriorIzquierdo
-Chaleco --> Bolsillo: bolsilloExteriorIzquierdo
-Chaleco --> Bolsillo: bolsilloInteriorDerecho
-Chaleco --> Bolsillo: bolsilloInteriorDerecho
+Chaleco --> Bolsillo: -bolsilloInteriorIzquierdo
+Chaleco --> Bolsillo: -bolsilloExteriorIzquierdo
+Chaleco --> Bolsillo: -bolsilloInteriorDerecho
+Chaleco --> Bolsillo: -bolsilloInteriorDerecho
+
+class Estudiante
+class Profesor
+
+' Multiplicidad
+' Por 1 profesor se tiene de entre
+' 10 a 40 estudiantes.
+' * cuantificador de infinito.
+Estudiante "10..40"<-->"1" Profesor
 @enduml
