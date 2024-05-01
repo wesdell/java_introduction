@@ -13,7 +13,7 @@ public class Chaleco {
   public void guardar(int numeroBolsillo, String objetoAGuardar) {
     if (this.bolsillos[numeroBolsillo].estaAbierto()) {
       if (this.bolsillos[numeroBolsillo].estaDisponible()) {
-        bolsillos[numeroBolsillo].guardar(objetoAGuardar);
+        this.bolsillos[numeroBolsillo].guardar(objetoAGuardar);
       }
     }
   }
