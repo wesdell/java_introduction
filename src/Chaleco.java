@@ -1,20 +1,30 @@
 public class Chaleco {
-  private boolean abierto;
+  private boolean chalecoAbierto;
+  private Bolsillo[] bolsillos;
 
   public void abrir() {
-    this.abierto = true;
+    this.chalecoAbierto = true;
   }
 
   public void cerrar() {
-    this.abierto = false;
+    this.chalecoAbierto = false;
+  }
+
+  public void guardar(int numeroBolsillo, String objetoAGuardar) {
+    if (this.bolsillos[numeroBolsillo].estaAbierto()) {
+      if (this.bolsillos[numeroBolsillo].estaDisponible()) {
+        bolsillos[numeroBolsillo].guardar(objetoAGuardar);
+      }
+    }
   }
 
   private String estaAbierto() {
-    return this.abierto ? "abierto" : "cerrado";
+    return this.chalecoAbierto ? "abierto" : "cerrado";
   }
 
   @Override
   public String toString() {
     return "El chaleco esta: " + this.estaAbierto();
   }
+
 }
