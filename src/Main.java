@@ -29,10 +29,10 @@ Los metodos en general deben tener un nivel de acceso publico (puede ser privado
 
 public class Main {
   public static void main(String[] args) {
-    Chaleco chaleco = new Chaleco();
+    Chaleco chaleco = new Chaleco(); // Instancia de una clase
     chaleco.abrir();
-    System.out.println(chaleco);
+    System.out.println(chaleco.toString());
     chaleco.cerrar();
-    System.out.println(chaleco);
+    System.out.println(chaleco.toString());
   }
 }
