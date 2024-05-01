@@ -32,5 +32,7 @@ public class Main {
     Chaleco chaleco = new Chaleco();
     chaleco.abrir();
     System.out.println(chaleco);
+    chaleco.cerrar();
+    System.out.println(chaleco);
   }
 }
