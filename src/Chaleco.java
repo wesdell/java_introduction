@@ -5,6 +5,10 @@ public class Chaleco {
   public Chaleco() {
     this.chalecoAbierto = false;
     this.bolsillos = new Bolsillo[4];
+    this.bolsillos[0] = new Bolsillo();
+    this.bolsillos[1] = new Bolsillo();
+    this.bolsillos[2] = new Bolsillo();
+    this.bolsillos[3] = new Bolsillo();
   }
 
   public void abrir() {
