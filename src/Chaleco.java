@@ -2,6 +2,11 @@ public class Chaleco {
   private boolean chalecoAbierto;
   private Bolsillo[] bolsillos;
 
+  public Chaleco() {
+    this.chalecoAbierto = false;
+    this.bolsillos = new Bolsillo[4];
+  }
+
   public void abrir() {
     this.chalecoAbierto = true;
   }
