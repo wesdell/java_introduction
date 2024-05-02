@@ -1,10 +1,11 @@
 public class Waistcoat {
+  public static final int POCKETS_AMOUNT = 4;
   private boolean openWaistcoat;
   private Pocket[] pockets;
 
   public Waistcoat() {
     this.openWaistcoat = false;
-    this.pockets = new Pocket[4];
+    this.pockets = new Pocket[POCKETS_AMOUNT];
     this.pockets[0] = new Pocket();
     this.pockets[1] = new Pocket();
     this.pockets[2] = new Pocket();
@@ -32,6 +33,10 @@ public class Waistcoat {
   }
 
   public void openPocket(int pocketNumber) {
+    if (!this.isValidPocketNumber(pocketNumber)) {
+      System.out.println(pocketNumber + " no es un valor valido.");
+      return;
+    }
     this.pockets[pocketNumber].open();
   }
 
@@ -45,6 +50,10 @@ public class Waistcoat {
 
   private String isOpenWaistcoat() {
     return this.openWaistcoat ? "abierto" : "cerrado";
+  }
+
+  private boolean isValidPocketNumber(int pocketNumber) {
+    return (pocketNumber >= 0) && (pocketNumber < POCKETS_AMOUNT);
   }
 
   @Override
