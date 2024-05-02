@@ -34,6 +34,8 @@ public class Main {
     System.out.println(waistcoat.toString());
     waistcoat.close();
     System.out.println(waistcoat.toString());
+    waistcoat.openPocket(1);
     waistcoat.save(1, "objeto");
+    System.out.println(waistcoat.getPocketsContent());
   }
 }
