@@ -2,10 +2,6 @@ public class Pocket {
   private boolean openPocket;
   private String content;
 
-  public Pocket() {
-    this.openPocket = false;
-  }
-
   public void open() {
     this.openPocket = true;
   }
