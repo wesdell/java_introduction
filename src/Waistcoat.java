@@ -37,8 +37,8 @@ public class Waistcoat {
 
   public String getPocketsContent() {
     String content = "";
-    for (int i = 0; i < this.pockets.length; i++) {
-      content += this.pockets[i].getContent();
+    for (Pocket pocket : pockets) {
+      content += pocket.getContent();
     }
     return content;
   }
@@ -51,5 +51,4 @@ public class Waistcoat {
   public String toString() {
     return "El chaleco esta: " + this.isOpenWaistcoat();
   }
-
 }
