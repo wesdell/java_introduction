@@ -20,11 +20,27 @@ public class Waistcoat {
   }
 
   public void save(int pocketNumber, String itemToSave) {
-    if (this.pockets[pocketNumber].isOpenPocket()) {
-      if (this.pockets[pocketNumber].isAvailable()) {
-        this.pockets[pocketNumber].save(itemToSave);
-      }
+    if (!this.pockets[pocketNumber].isOpenPocket()) {
+      System.out.println("El bolsillo " + pocketNumber + " no esta abierto.");
+      return;
     }
+    if (!this.pockets[pocketNumber].isAvailable()) {
+      System.out.println("El bolsillo " + pocketNumber + " esta lleno.");
+      return;
+    }
+    this.pockets[pocketNumber].save(itemToSave);
+  }
+
+  public void openPocket(int pocketNumber) {
+    this.pockets[pocketNumber].open();
+  }
+
+  public String getPocketsContent() {
+    String content = "";
+    for (int i = 0; i < this.pockets.length; i++) {
+      content += this.pockets[i].getContent();
+    }
+    return content;
   }
 
   private String isOpenWaistcoat() {
