@@ -43,7 +43,7 @@ public class Waistcoat {
   public String getPocketsContent() {
     String content = "";
     for (Pocket pocket : pockets) {
-      content += pocket.getContent();
+      content += pocket.getContent() + " ";
     }
     return content;
   }
