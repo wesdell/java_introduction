@@ -1,0 +1,16 @@
+@startuml
+abstract class Animal <<Abstract>> {
++{abstract}breathe()
+}
+
+class Mammal {
++breastfeed()
+}
+
+class Bird {
++fly()
+}
+
+Mammal --|> Animal
+Bird --|> Animal
+@enduml
