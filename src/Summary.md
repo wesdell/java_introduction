@@ -27,7 +27,7 @@ Definir y manipular los atributos dentro de sus respectivas clases.
 - Los atributos en general deben tener un nivel de acceso privado (puede ser publico).
 - Los metodos en general deben tener un nivel de acceso publico (puede ser privado).
 
-## Herencia
+## Herencia y Polimorfismo
 
 La herencia es el acto de trasladar caracteristicas o comportamientos, pero cuando existen
 cambios en esos comportamientos decimos que son polimorficos.
@@ -39,3 +39,4 @@ cambios en esos comportamientos decimos que son polimorficos.
 - Un concepto demasiado abstracto no se puede instanciar.
 - Clase abstracta (estereotipo UML) un concepto muy general.
 - Arbol de herencia.
+- La clase hijo extiende los atributos y comportamientos de la clase base.
