@@ -1,9 +1,17 @@
-public class Pocket {
+public abstract class Pocket {
   private boolean openPocket;
   private String content;
 
+  public String getContent() {
+    return this.content;
+  }
+
   public void open() {
     this.openPocket = true;
+  }
+
+  public void save(String itemToSave) {
+    this.content = itemToSave;
   }
 
   public void close() {
@@ -18,11 +26,5 @@ public class Pocket {
     return this.content == null;
   }
 
-  public String getContent() {
-    return this.content;
-  }
-
-  public void save(String itemToSave) {
-    this.content = itemToSave;
-  }
+  public abstract boolean isAvailablePocket(boolean waistcoatState);
 }

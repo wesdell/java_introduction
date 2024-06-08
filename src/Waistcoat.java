@@ -6,10 +6,10 @@ public class Waistcoat {
   public Waistcoat() {
     this.openWaistcoat = false;
     this.pockets = new Pocket[POCKETS_AMOUNT];
-    this.pockets[0] = new Pocket();
-    this.pockets[1] = new Pocket();
-    this.pockets[2] = new Pocket();
-    this.pockets[3] = new Pocket();
+    this.pockets[0] = new ExternalPocket();
+    this.pockets[1] = new ExternalPocket();
+    this.pockets[2] = new InternalPocket();
+    this.pockets[3] = new InternalPocket();
   }
 
   public void open() {
@@ -27,6 +27,10 @@ public class Waistcoat {
     }
     if (!this.pockets[pocketNumber].isAvailable()) {
       System.out.println("El bolsillo " + pocketNumber + " esta lleno.");
+      return;
+    }
+    if (!this.pockets[pocketNumber].isAvailablePocket(this.openWaistcoat)) {
+      System.out.println("El bolsillo interno " + pocketNumber + " no esta disponible porque el chaleco esta cerrado.");
       return;
     }
     this.pockets[pocketNumber].save(itemToSave);

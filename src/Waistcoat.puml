@@ -1,39 +1,38 @@
 @startuml
-
-class Chaleco {
--propietario: Persona
--nombreColor: String
--abierto: boolean
-'-bolsilloInteriorIzquierdo: Bolsillo
-'-bolsilloExteriorIzquierdo: Bolsillo
-'-bolsilloInteriorDerecho: Bolsillo
-'-bolsilloExteriorDerecho: Bolsillo
-+abrirChaleco()
-+cerrarChaleco()
-+abrirBolsillo(Bolsillo)
-+guardarEnBolsillo(Bolsillo, Objeto): void
-+sacarDeBolsillo(Bolsillo): Objeto
+class ExternalPocket {
+  + isAvailablePocket(boolean): boolean
+}
+class InternalPocket {
+  + isAvailablePocket(boolean): boolean
+}
+class Main {
+  + main(String[]): void
+}
+abstract class Pocket {
+  - content: String
+  - openPocket: boolean
+  + close(): void
+  + isAvailable(): boolean
+  + isOpenPocket(): boolean
+  + open(): void
+  + isAvailablePocket(boolean): boolean
+  + getContent(): String
+  + save(String): void
+}
+class Waistcoat {
+  - pockets: Pocket[]
+  + POCKETS_AMOUNT: int
+  - openWaistcoat: boolean
+  - isValidPocketNumber(int): boolean
+  - isOpenWaistcoat(): String
+  + close(): void
+  + openPocket(int): void
+  + getPocketsContent(): String
+  + toString(): String
+  + save(int, String): void
+  + open(): void
 }
 
-class Bolsillo {
--lleno: boolean
--objeto: Objeto
-+abrirBolsillo()
-+guardar(Objeto): void
-+sacar(): Objeto
-}
-
-Chaleco --> Bolsillo: -bolsilloInteriorIzquierdo
-Chaleco --> Bolsillo: -bolsilloExteriorIzquierdo
-Chaleco --> Bolsillo: -bolsilloInteriorDerecho
-Chaleco --> Bolsillo: -bolsilloInteriorDerecho
-
-class Estudiante
-class Profesor
-
-' Multiplicidad
-' Por 1 profesor se tiene de entre
-' 10 a 40 estudiantes.
-' * cuantificador de infinito.
-Estudiante "10..40"<-->"1" Profesor
+ExternalPocket  --|>  Pocket
+InternalPocket  --|>  Pocket
 @enduml
