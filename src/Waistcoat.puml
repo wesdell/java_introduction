@@ -1,13 +1,4 @@
 @startuml
-class ExternalPocket {
-  + isAvailablePocket(boolean): boolean
-}
-class InternalPocket {
-  + isAvailablePocket(boolean): boolean
-}
-class Main {
-  + main(String[]): void
-}
 abstract class Pocket {
   - content: String
   - openPocket: boolean
@@ -15,10 +6,12 @@ abstract class Pocket {
   + isAvailable(): boolean
   + isOpenPocket(): boolean
   + open(): void
-  + isAvailablePocket(boolean): boolean
   + getContent(): String
   + save(String): void
 }
+class ExternalPocket
+class InternalPocket
+
 class Waistcoat {
   - pockets: Pocket[]
   + POCKETS_AMOUNT: int
@@ -32,6 +25,8 @@ class Waistcoat {
   + save(int, String): void
   + open(): void
 }
+
+Waistcoat -->"1..*" Pocket
 
 ExternalPocket  --|>  Pocket
 InternalPocket  --|>  Pocket

@@ -25,6 +25,4 @@ public abstract class Pocket {
   public boolean isAvailable() {
     return this.content == null;
   }
-
-  public abstract boolean isAvailablePocket(boolean waistcoatState);
 }

@@ -20,7 +20,10 @@ public class Waistcoat {
     this.openWaistcoat = false;
   }
 
-  public void save(int pocketNumber, String itemToSave) {
+  public void save(int pocketNumber, String itemToSave) throws ValidPocketException {
+    if (!this.isValidPocketNumber(pocketNumber)) {
+      throw new ValidPocketException(pocketNumber);
+    }
     if (!this.pockets[pocketNumber].isOpenPocket()) {
       System.out.println("El bolsillo " + pocketNumber + " no esta abierto.");
       return;
@@ -29,27 +32,22 @@ public class Waistcoat {
       System.out.println("El bolsillo " + pocketNumber + " esta lleno.");
       return;
     }
-    if (!this.pockets[pocketNumber].isAvailablePocket(this.openWaistcoat)) {
-      System.out.println("El bolsillo interno " + pocketNumber + " no esta disponible porque el chaleco esta cerrado.");
-      return;
-    }
     this.pockets[pocketNumber].save(itemToSave);
   }
 
-  public void openPocket(int pocketNumber) {
+  public void openPocket(int pocketNumber) throws ValidPocketException {
     if (!this.isValidPocketNumber(pocketNumber)) {
-      System.out.println(pocketNumber + " no es un valor valido.");
-      return;
+      throw new ValidPocketException(pocketNumber);
     }
     this.pockets[pocketNumber].open();
   }
 
   public String getPocketsContent() {
-    String content = "";
+    StringBuilder content = new StringBuilder();
     for (Pocket pocket : pockets) {
-      content += pocket.getContent() + " ";
+      content.append(pocket.getContent()).append(" ");
     }
-    return content;
+    return content.toString();
   }
 
   private String isOpenWaistcoat() {
